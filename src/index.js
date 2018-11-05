@@ -6,9 +6,14 @@ import TweekLocalCache from 'tweek-local-cache';
 import ThemeProvider from './ThemeProvider';
 import App from './App';
 import './index.css';
-import config from './config.json';
 
-const baseServiceUrl = config.TweekUrl;
+const env = window.location.pathname.replace('/','');
+
+if(!env) {
+  alert('Please provide env.');
+}
+
+const baseServiceUrl = `https://api.${env}.configz.io`;
 
 function createTweekRepo() {
   const tweekClient = createTweekClient({ baseServiceUrl });
