@@ -29,13 +29,13 @@ const ItemsList = glamorous.div(
 );
 
 
-const App = ({enabled, message}) => {
+const App = ({enabled, message, userName}) => {
 
   const onClick = ()=> alert(message);
 
   return (
   <Shop>
-    <Header>Tweek Shop</Header>
+    <Header>{`Welcome ${userName}!`}</Header>
     <ItemsList>{items.map(({ id, ...props }) => <Product key={id} {...props} onClick={enabled && onClick} />)}</ItemsList>
   </Shop>
 )

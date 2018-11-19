@@ -7,11 +7,9 @@ import ThemeProvider from './ThemeProvider';
 import App from './App';
 import './index.css';
 
-const env = window.location.pathname.replace('/','');
-
-if(!env) {
-  alert('Please provide env.');
-}
+const params = window.location.pathname.split('/');
+const env = params[1]||'test';
+const user = params[2]||'john';
 
 const baseServiceUrl = `https://api.${env}.configz.io`;
 
@@ -21,7 +19,7 @@ function createTweekRepo() {
 
   tweekRepo.context = {
     user: {
-      id: "john"
+      id: user
     }
   };
 
@@ -34,7 +32,7 @@ function createTweekRepo() {
 ReactDOM.render(
   <Provider repo={createTweekRepo()}>
     <ThemeProvider>
-      <App />
+      <App userName={user}/>
     </ThemeProvider>
   </Provider>,
   document.getElementById('root'),
