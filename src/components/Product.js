@@ -2,10 +2,11 @@ import React from 'react';
 import glamorous from 'glamorous';
 import Rating from './Rating';
 
-const Container = glamorous.div(
-  {
+const Container = glamorous.div(props=>
+  ({
     display: 'grid',
-  },
+    cursor: props.onClick ? 'pointer': null
+  }),
   ({ theme: { colors, layouts } }) => ({
     backgroundColor: colors.item.background,
     boxShadow: colors.item.shadow,
