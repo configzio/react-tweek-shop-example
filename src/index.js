@@ -14,7 +14,7 @@ const user = params[2]||'john';
 const baseServiceUrl = `https://api.${env}.configz.io`;
 
 function createTweekRepo() {
-  const tweekClient = createTweekClient({ baseServiceUrl });
+  const tweekClient = createTweekClient({ baseServiceUrl });  
   const tweekRepo = new TweekLocalCache({ client: tweekClient });
 
   tweekRepo.context = {
@@ -22,9 +22,17 @@ function createTweekRepo() {
       id: user
     }
   };
+  
+  let currentInterval = 1000;
+  let refreshKeysInterval = setInterval(() => tweekRepo.refresh(), currentInterval);
 
+  tweekRepo.observe('shop/refresh_interval').subscribe(interval=>{
+    if(!interval.hasValue || interval.value === currentInterval) return;
 
-  setInterval(() => tweekRepo.refresh(), 1000);
+    currentInterval = interval.value;
+    clearInterval(refreshKeysInterval);
+    refreshKeysInterval = setInterval(() => tweekRepo.refresh(), currentInterval);
+  });
 
   return tweekRepo;
 }
