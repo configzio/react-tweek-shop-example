@@ -21,6 +21,6 @@
     "start:full-env": "cd ../../ && docker-compose up -d tweek-editor && cd - && yarn start",
     "build": "react-scripts build",
     "eject": "react-scripts eject",
-    "sync": "aws s3 sync ./build s3://example.configz.io/"
+    "sync": "aws s3 sync ./build s3://example.configz.io/ --delete"
   }
 }
