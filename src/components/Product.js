@@ -2,11 +2,16 @@ import React from 'react';
 import glamorous from 'glamorous';
 import Rating from './Rating';
 
-const Container = glamorous.div(props=>
-  ({
+const Container = glamorous.div({
     display: 'grid',
-    cursor: props.onClick ? 'pointer': null
-  }),
+    transition: 'transform 0.3s ease',
+  },
+  ({onClick}) => onClick && {
+    cursor: 'pointer',    
+    ':hover': {      
+      transform:'scale(1.03)'
+    }
+  },
   ({ theme: { colors, layouts } }) => ({
     backgroundColor: colors.item.background,
     boxShadow: colors.item.shadow,
