@@ -1,10 +1,11 @@
 export const colors = {
   light: {
-    background: '#dcd7d7',
+    background: '#e1f5fe',
     color: 'black',
     item: {
       background: 'white',
       shadow: '2px 2px 4px #696969',
+      backgroundOnHover:'#afc2cb'
     },
     star: {
       fill: 'yellow',
@@ -12,11 +13,12 @@ export const colors = {
     },
   },
   dark: {
-    background: '#2B2B2B',
+    background: '#212121',
     color: '#BBBBBB',
     item: {
-      background: '#393A3C',
+      background: '#484848',
       shadow: '-1px -1px 2px #696969',
+      backgroundOnHover:'black'
     },
     star: {
       fill: 'darkorange',

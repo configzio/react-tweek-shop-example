@@ -17,38 +17,12 @@
     "image": "/images/star-destroyer.png"
   },
   {
-    "id": "magic-wand",
-    "displayName": "Magic Wand",
-    "description":
-      "A thin, hand-held stick that may be transformed into other items, grow, vanish, move, display a will of its own, or behave magically in its own right",
-    "price": 134.16,
-    "rating": 4.0,
-    "image": "/images/magic-wand.jpg"
-  },
-  {
-    "id": "rubber-duck",
-    "displayName": "Rubber Duck",
-    "description": "A rubber duck that will keep all your secrets",
-    "price": "9.90",
-    "rating": 5,
-    "image": "/images/rubber-duck.jpg"
-  },
-  {
     "id": "round-transportation-device",
     "displayName": "Round Transportation Device",
     "description": "It's actually just a wheel",
     "price": "200.00",
     "rating": 5,
     "image": "/images/round-transportation-device.png"
-  },
-  {
-    "id": "sonic-screwdriver",
-    "displayName": "Sonic Screwdriver",
-    "description":
-      "A multifunctional tool that can hack, disable, activate, and otherwise control technology from almost every era",
-    "price": "60.00",
-    "rating": 3.8,
-    "image": "/images/sonic-screwdriver.jpg"
   },
   {
     "id": "energy-matter-scrambler",
@@ -66,5 +40,31 @@
     "price": 85.15,
     "rating": 3.1,
     "image": "/images/protoss-pylon.png"
+  },
+  {
+    "id": "magic-wand",
+    "displayName": "Magic Wand",
+    "description":
+      "A thin, hand-held stick that may be transformed into other items, grow, vanish, move, display a will of its own, or behave magically in its own right",
+    "price": 134.16,
+    "rating": 4.0,
+    "image": "/images/magic-wand.jpg"
+  },
+  {
+    "id": "sonic-screwdriver",
+    "displayName": "Sonic Screwdriver",
+    "description":
+      "A multifunctional tool that can hack, disable, activate, and otherwise control technology from almost every era",
+    "price": "60.00",
+    "rating": 3.8,
+    "image": "/images/sonic-screwdriver.jpg"
+  },
+  {
+    "id": "rubber-duck",
+    "displayName": "Rubber Duck",
+    "description": "A rubber duck that will keep all your secrets",
+    "price": "9.90",
+    "rating": 5,
+    "image": "/images/rubber-duck.jpg"
   }
 ]

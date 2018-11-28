@@ -5,7 +5,7 @@ import Rating from './Rating';
 const Container = glamorous.div(
   ({ theme: { colors, layouts } }) => ({
     display: 'grid',
-    transition: 'transform 0.3s ease',
+    transition: 'all 0.3s ease',
     backgroundColor: colors.item.background,    
     ...layouts.item,
   }),
@@ -13,7 +13,8 @@ const Container = glamorous.div(
     cursor: 'pointer',    
     boxShadow: theme.colors.item.shadow,
     ':hover': {      
-      transform:'scale(1.03)'
+      transform:'scale(1.03)',
+      backgroundColor: theme.colors.item.backgroundOnHover      
     }
   }
 );
