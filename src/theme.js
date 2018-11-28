@@ -1,6 +1,6 @@
 export const colors = {
   light: {
-    background: 'whitesmoke',
+    background: '#dcd7d7',
     color: 'black',
     item: {
       background: 'white',

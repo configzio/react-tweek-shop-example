@@ -2,21 +2,20 @@ import React from 'react';
 import glamorous from 'glamorous';
 import Rating from './Rating';
 
-const Container = glamorous.div({
+const Container = glamorous.div(
+  ({ theme: { colors, layouts } }) => ({
     display: 'grid',
     transition: 'transform 0.3s ease',
-  },
-  ({onClick}) => onClick && {
+    backgroundColor: colors.item.background,    
+    ...layouts.item,
+  }),
+  ({onClick, theme}) => onClick && {
     cursor: 'pointer',    
+    boxShadow: theme.colors.item.shadow,
     ':hover': {      
       transform:'scale(1.03)'
     }
-  },
-  ({ theme: { colors, layouts } }) => ({
-    backgroundColor: colors.item.background,
-    boxShadow: colors.item.shadow,
-    ...layouts.item,
-  }),
+  }
 );
 
 const DisplayName = glamorous.div(
