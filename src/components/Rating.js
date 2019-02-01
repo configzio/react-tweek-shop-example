@@ -1,7 +1,7 @@
 import React from 'react';
 import glamorous from 'glamorous';
 import { branch, compose, renderNothing } from 'recompose';
-import { withTweekKeys } from 'react-tweek';
+import { withTweekKeys } from '../utils/Tweek';
 
 const Container = glamorous.div(
   {
@@ -78,6 +78,15 @@ const Rating = ({ rating }) => (
   </Container>
 );
 
-export default compose(withTweekKeys('shop/rating/is_enabled'), branch(props => !props.isEnabled, renderNothing))(
+export default compose(
+  withTweekKeys(
+    {
+      isEnabled: 'shop/rating/is_enabled',
+    },
+    {
+      defaultValues: {isEnabled: 'false'},
+    },
+  ),
+  branch(props => !props.isEnabled, renderNothing))(
   Rating,
 );

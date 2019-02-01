@@ -2,7 +2,7 @@ import React from 'react';
 import glamorous from 'glamorous';
 import Product from './components/Product';
 import items from './items.json';
-import { withTweekKeys } from 'react-tweek';
+import { withTweekKeys } from './utils/Tweek';
 import { compose } from 'recompose';
 
 const Shop = glamorous.div(
@@ -42,5 +42,12 @@ const App = ({enabled, message, userName}) => {
   };
 
 export default compose(
-  withTweekKeys('shop/click/_'),
+  withTweekKeys(
+    {
+      enabled: 'shop/click/enabled',
+    },
+    {
+      defaultValues: {enabled: 'false'},
+    },
+  ),
   )(App);
